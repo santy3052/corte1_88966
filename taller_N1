@@ -1,1 +1,33 @@
+"Realice un programa donde se soliciten dos números al usuario,"\
+"después se de como resultado el residuo y el cociente de la división entre <n1> y <n2>. "
+n1=int(input("ingrese el primer numero deseado"))
+n2=int(input("ingrese el segundo numero deseado"))
+r=n1%n2
+c=n1//n2
+print(f'el residuo de la division es: {r} , y el cociente de la division es: {c}')
 
+"Realice un programa que calcule el índice de masa corporal de una persona, donde le solicite al usuario la estatura en cm y el peso en Kg." \
+"Después imprima como resultado el índice de masa corporal mediante un mensaje que diga “Su IMC es <valor>” redondeado con dos decimales. "
+a=int(input("ingrese su altura en centimetros"))
+p=int(input("ingrese su peso en Kilogramos"))
+a=a/100
+imc=p/(a**2)
+imc=round(imc,2)
+print(f'Su IMC es {imc}')
+
+"Realice un programa donde se solicite al usuario escribir el precio final de un artículo o producto," \
+"con el que después calculará e imprimirá en pantalla el valor del IVA y el valor bruto (precio antes de IVA) del artículo o producto."
+pf=int(input("ingrese el precio final del articulo deseado"))
+iva=pf*0.19
+vb=pf-iva
+print(f'el valor del IVA del producto es: {iva}, el valor del valor bruto del producto es: {vb}')
+
+"Realice un programa que permita calcular el costo anual del consumo de combustible de un vehículo," \
+"si el usuario ingresa la distancia recorrida (Km) anual," \
+"el consumo de combustible (L / 100Km) anual y el costo promedio anual del combustible por litros recorridos ($ / L) "
+dt=int(input("ingrese la distancia recorrida anual en Km"))
+consumot=int(input("ingrese el consumo de combustible anual del vehiculo en L/100Km"))
+costop=float(input("ingrese el costo promedio anual en $/L"))
+consumo=(consumot*dt)/100
+costoA=consumo*costop
+print(f'el costo anual es: {costoA}')
