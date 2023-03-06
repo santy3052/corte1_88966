@@ -1,0 +1,64 @@
+from random import randint
+def aleatorio(n=10):
+    numeros=[]
+    while len(numeros)<n:
+        a=randint(100, 120)
+        if (a!= 110) and (a!=115) and (a!=119):
+            if (len(numeros)%2)==0 and (a%2==0):
+                numeros.append(a)
+            elif (len(numeros)%2)==1 and (a%2==1):
+                numeros.append(a)
+
+
+    return numeros
+numeros=aleatorio()
+print(numeros)
+
+#################################################
+import math
+print('Bienbenido, escoge la operacion que deseas realizar')
+print('1: seno del angulo')
+print('2: coseno del angulo')
+print('3: tangente del angulo')
+print('4: exponencial del valor')
+print('5: logaritmo natural del valor')
+o=int(input('ingrese su eleccion'))
+if o==1:
+    n = float(input('ingrese el valor del angulo a calcular'))
+elif o==2:
+    n = float(input('ingrese el valor del angulo a calcular'))
+elif o==3:
+    n = float(input('ingrese el valor del angulo a calcular'))
+elif o==4:
+    n = float(input('ingrese el valor a calcular'))
+elif o==5:
+    n = float(input('ingrese el valor a calcular'))
+
+
+def calculo_operacional(o,n):
+    if o==1:
+        print('se va a calcular el seno del angulo:', n)
+        n1=math.radians(n)
+        nr=math.sin(n1)
+        return print(f'el seno de {n} = {nr}')
+    if o==2:
+        print('se va a calcular el coseno del angulo:', n)
+        n1=math.radians(n)
+        nr=math.cos(n1)
+        return print(f'el coseno de {n} = {nr}')
+    if o==3:
+        print('se va a calcular la tangente del angulo:', n)
+        n1=math.radians(n)
+        nr=math.tan(n1)
+        return print(f'la tangente de {n} = {nr}')
+    if o==4:
+        print('se va a calcular la exponencial del valor:', n)
+        nr=math.exp(n)
+        return print(f'la exponencial de {n} = {nr}')
+    if o==5:
+
+        print('se va a calcular el logaritmo natural del valor:', n)
+        nr=math.log(n)
+        return print(f'el logaritmo natural de {n} = {nr}')
+
+resultado=calculo_operacional(o,n)
