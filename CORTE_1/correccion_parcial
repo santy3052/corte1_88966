@@ -1,3 +1,4 @@
+#def digitos():
 n=int(input('ingrese su numero'))
 digit_equal=0
 digit_different=0
@@ -16,6 +17,7 @@ print(f'iguales a 5 {digit_different}')
 print(f'iguales a 5 {digit_equal+digit_different}')
 
 ##########################################
+#def fibonacci():
 n=int(input('ingrese la cantidad deseada'))
 a=0
 b=1
@@ -27,6 +29,7 @@ for i in range(n-2):
     print(c)
 
 #########################################
+#def primos():
 num=int(input('especifique la cantidad de numeros'))
 j=2; x=0; n=2
 print('1')
@@ -41,3 +44,17 @@ while x <=num-2:
     else:
         j+=1
 
+######################################
+
+#if __name__=='__name__':
+#   main()
+
+#####
+def main():
+    opc=input('ingrese su eleccion')
+    #if opc=='1'
+        #digitos()
+    #if opc=='2'
+        #fibonacci()
+    #if opc=='3'
+        #primos()
