@@ -53,8 +53,8 @@ while x <=num-2:
 def main():
     opc=input('ingrese su eleccion')
     #if opc=='1'
-        #digitos()
+        #.digitos()
     #if opc=='2'
-        #fibonacci()
+        #.fibonacci()
     #if opc=='3'
-        #primos()
+        #.primos()
