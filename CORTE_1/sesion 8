@@ -1,0 +1,30 @@
+cadena='hola mundo'
+print(cadena)
+print(cadena[3])
+print(len(cadena))
+texto=''
+for i in cadena:
+    texto += str(f'{i},')
+    print(texto)
+#####################
+c=0
+while c<len(cadena):
+    texto+=(f'{cadena[c]},')
+    print(texto)
+    c+=1
+##################
+n=input('ingrese su numero')
+dim=len(n)
+c=0
+if 2<dim<8:
+    for i in n:
+        if i=='5':
+            print('salto')
+            c+=1
+        else:
+            print(i)
+    print(f'numeros iguales a 5: {c}')
+    print(f'numeros diferentes a 5: {dim-c}')
+    print(f'total de digitos: {dim}')
+else:
+    print(('rango invalido'))

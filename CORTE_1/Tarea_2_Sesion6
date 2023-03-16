@@ -62,3 +62,26 @@ def calculo_operacional(o,n):
         return print(f'el logaritmo natural de {n} = {nr}')
 
 resultado=calculo_operacional(o,n)
+
+#############################
+def main(a,b,*args,**kwargs):
+    print(a)
+    print(b)
+    print(args)
+    print(kwargs)
+if __name__=='__main__':
+    main(1,2,3,4,5,i=10, j=20)
+
+#############################
+import random as r
+for i in range(5):
+    numbers= r.randint(10,20)
+    print(numbers)
+
+for i in range(0,10):
+    n=r.randint(10,20)
+    real=round(r.uniform(10,20),2)
+    letra= r.choice('murcielago')
+    print(n, end=' ')
+    print(real, end=' ')
+    print(letra, '\n')
