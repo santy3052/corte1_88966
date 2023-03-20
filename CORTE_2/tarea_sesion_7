@@ -1,3 +1,20 @@
+from random import randint
+def aleatorio(n=10):
+    numeros=[]
+    while len(numeros)<n:
+        a=randint(100, 120)
+        if (a!= 110) and (a!=115) and (a!=119):
+            if (len(numeros)%2)==0 and (a%2==0):
+                numeros.append(a)
+            elif (len(numeros)%2)==1 and (a%2==1):
+                numeros.append(a)
+
+
+    return numeros
+numeros=aleatorio()
+print(numeros)
+###########################################################
+###########################################################
 #archivo llamado "T_funciones_2.py"
 
 import math
