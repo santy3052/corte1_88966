@@ -70,3 +70,31 @@ elif o==4:
 elif o==5:
     n = float(input('ingrese el valor a calcular'))
     resultado=calculo_Ln(n)
+    
+###########################################################
+###########################################################
+# Solucion punto 2 a travez de dos archivos .py
+# importar archivo llamado T_funciones_2
+import T_funciones_2 as fun2
+print('Bienbenido, escoge la operacion que deseas realizar')
+print('1: seno del angulo')
+print('2: coseno del angulo')
+print('3: tangente del angulo')
+print('4: exponencial del valor')
+print('5: logaritmo natural del valor')
+o=int(input('ingrese su eleccion'))
+if o==1:
+    n = float(input('ingrese el valor del angulo a calcular'))
+    resultado=fun2.calculo_seno(n)
+elif o==2:
+    n = float(input('ingrese el valor del angulo a calcular'))
+    resultado=fun2.calculo_coseno(n)
+elif o==3:
+    n = float(input('ingrese el valor del angulo a calcular'))
+    resultado=fun2.calculo_tangente(n)
+elif o==4:
+    n = float(input('ingrese el valor a calcular'))
+    resultado=fun2.calculo_expo(n)
+elif o==5:
+    n = float(input('ingrese el valor a calcular'))
+    resultado=fun2.calculo_Ln(n)
