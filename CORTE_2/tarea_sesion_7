@@ -1,4 +1,5 @@
 from random import randint
+
 def aleatorio(n=10):
     numeros=[]
     while len(numeros)<n:
@@ -13,9 +14,9 @@ def aleatorio(n=10):
     return numeros
 numeros=aleatorio()
 print(numeros)
+
 ###########################################################
 ###########################################################
-#archivo llamado "T_funciones_2.py"
 
 import math
 def calculo_seno(n):
@@ -47,10 +48,6 @@ def calculo_Ln(n):
     nr=math.log(n)
     return print(f'el logaritmo natural de {n} = {nr}')
 
-##################################################################
-### archivo principal
-import T_funciones_2 as fun2 # se importa el archivo donde estan las funciones
-
 print('Bienbenido, escoge la operacion que deseas realizar')
 print('1: seno del angulo')
 print('2: coseno del angulo')
@@ -60,16 +57,16 @@ print('5: logaritmo natural del valor')
 o=int(input('ingrese su eleccion'))
 if o==1:
     n = float(input('ingrese el valor del angulo a calcular'))
-    resultado=fun2.calculo_seno(n)
+    resultado=calculo_seno(n)
 elif o==2:
     n = float(input('ingrese el valor del angulo a calcular'))
-    resultado=fun2.calculo_coseno(n)
+    resultado=calculo_coseno(n)
 elif o==3:
     n = float(input('ingrese el valor del angulo a calcular'))
-    resultado=fun2.calculo_tangente(n)
+    resultado=calculo_tangente(n)
 elif o==4:
     n = float(input('ingrese el valor a calcular'))
-    resultado=fun2.calculo_expo(n)
+    resultado=calculo_expo(n)
 elif o==5:
     n = float(input('ingrese el valor a calcular'))
-    resultado=fun2.calculo_Ln(n)
+    resultado=calculo_Ln(n)
