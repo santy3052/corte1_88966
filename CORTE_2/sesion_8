@@ -1,0 +1,56 @@
+milista=[3,5,8,6,4,7,2]
+while 1:
+    opc=input('que desea realizar')
+    if opc=='borrar':
+        dato=int(input('cualo dato desea borrar'))
+        milista.remove(dato)
+        print(milista)
+    elif opc=='buscar':
+        dato=int(input('cual dato desea buscar'))
+        pos= milista.index(dato)
+        print(f'el indice es {pos}')
+    elif opc=='insertar':
+        dato=input('ingrese su dato')
+        idx=int(input('ingrese el indice'))
+        milista.insert(idx,dato)
+        print(milista)
+    elif opc== 'agregar':
+        dato=int(input('ingres el dato'))
+        milista.append(dato)
+        print(milista)
+    elif opc=='eliminar':
+        idx=int(input('ingrese el indice'))
+        milista.pop(idx)
+        print(milista)
+    elif opc== 'limpiar':
+        milista.clear()
+        print(milista)
+    elif opc=='tamaño':
+        print(f' el tamaño de la lista es: {len(milista)}')
+    elif opc=='minimo':
+        print(f' el valor minimo es: {min(milista)}')
+    elif opc=='maximo':
+        print(f' el valor minimo es: {max(milista)}')
+    elif opc=='suma':
+        print(f'la suma de la lista es: {sum(milista)}')
+    elif opc=='contador':
+        dato=int(input('ingrese el dato que desea contar'))
+        print(f'la catidad de veces que aparece {dato} es: {milista.count(dato)}')
+    elif opc=='confirmar':
+        dato=int(input('ingrese el dato que desea buscar'))
+        con= dato in milista
+        print(con)
+    elif opc=='juntar':
+        b=[1,2,3]
+        milista.extend(b)
+        print(milista)
+    elif opc=='ordenar':
+        print(milista)
+        milista.sort()
+        print(milista)
+    elif opc=='invertir':
+        print(milista)
+        milista.reverse()
+        print(milista)
+    elif opc=='salir':
+        break
