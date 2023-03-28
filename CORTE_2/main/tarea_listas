@@ -1,0 +1,65 @@
+c_integral=['martes-jueves','7-9am', '406 DB', 'Jairo Lalinde']
+estatica=['martes-jueves','9-11am', '306 DB', 'Elmer Cepeda']
+circuitos_DC=['martes-jueves','11am-1pm', '306 DB', 'Hernan Pineda']
+PASM=['martes-jueves','1-3pm', '303 GO', 'David Torres']
+materiales=['miercoles-viernes','9-11am', '407 DB', 'Elmer Cepeda']
+f_investigacion=['viernes','11am-1pm', '305 DB', 'Julian Cortes']
+print('ingrese el nombre de la materia que desea mostrar')
+mat=input('calculo_integral/ estatica/ circuitos_DC/ PASM/ materiales/ fundamentos')
+if mat=='calculo_integral':
+    print(c_integral)
+elif mat=='estatica':
+    print(estatica)
+elif mat=='circuitos_DC':
+    print(circuitos_DC)
+elif mat=='PASM':
+    print(PASM)
+elif mat=='materiales':
+    print(materiales)
+elif mat=='fundamentos':
+    print(f_investigacion)
+else:
+    print('opcion invalida')
+
+#########################################################################################
+#########################################################################################
+from random import randint
+def lista_num(n=10):
+    lista=[]
+    while len(lista)<n:
+        a = randint(1, 50)
+        lista.append(a)
+    return lista
+def mayor(lista):
+
+    maximo = lista[0]
+    for numero in lista:
+        if numero > maximo:
+            maximo = numero
+    print("El numero mayor en la lista es:", maximo)
+
+def n_primo(numero):
+    if numero <= 1:
+        return False
+    for i in range(2, numero):
+        if numero % i == 0:
+            return False
+    return True
+
+def primos(lista):
+    l_primos = []
+    for numero in lista:
+        if n_primo(numero):
+            l_primos.append(numero)
+    if len(l_primos) > 0:
+        print("Los numeros primos en la lista son:", l_primos)
+    else:
+        print("No se encontraron numeros primos en la lista")
+
+lista = lista_num()
+print("La lista generada es:", lista)
+
+mayor(lista)
+
+primos(lista)
+

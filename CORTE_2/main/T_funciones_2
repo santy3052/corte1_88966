@@ -1,0 +1,29 @@
+import math
+def calculo_seno(n):
+    print('se va a calcular el seno del angulo:', n)
+    n1=math.radians(n)
+    nr=math.sin(n1)
+    return print(f'el seno de {n} = {nr}')
+
+def calculo_coseno(n):
+    print('se va a calcular el coseno del angulo:', n)
+    n1=math.radians(n)
+    nr=math.cos(n1)
+    return print(f'el coseno de {n} = {nr}')
+
+def calculo_tangente(n):
+    print('se va a calcular la tangente del angulo:', n)
+    n1=math.radians(n)
+    nr=math.tan(n1)
+    return print(f'la tangente de {n} = {nr}')
+
+
+def calculo_expo(n):
+    print('se va a calcular la exponencial del valor:', n)
+    nr=math.exp(n)
+    return print(f'la exponencial de {n} = {nr}')
+
+def calculo_Ln(n):
+    print('se va a calcular el logaritmo natural del valor:', n)
+    nr=math.log(n)
+    return print(f'el logaritmo natural de {n} = {nr}')
