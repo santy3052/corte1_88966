@@ -1,0 +1,71 @@
+class Persona:
+    def __init__(self):
+        self.nombre=None
+        self.apellido=None
+        self.edad=None
+        self.frase=None
+    def hablar(self):
+        return self.frase
+def main():
+    estudiante=Persona()
+    estudiante.nombre='Roerto'
+    estudiante.apellido='Rodriguez'
+    estudiante.edad=20
+    estudiante.frase='debo estudiar'
+    futbolista=Persona()
+    futbolista.nombre='Radamel'
+    futbolista.apellido='Garcia'
+    futbolista.edad=36
+    futbolista.frase='gool'
+    print(id(estudiante), estudiante.nombre)
+    print(id(futbolista), futbolista.nombre)
+    print(id(estudiante), estudiante.hablar())
+    print(id(futbolista), futbolista.hablar())
+
+if __name__=='__main__':
+    main()
+##################################
+#indice masa corcoral
+class Personas():
+    def __init__(self):
+        self.nombre=None
+        self.altura=None
+        self.peso=None
+    def indice(self):
+        IMC=self.peso/((self.altura/100)**2)
+        if IMC<=18.5:
+            return str('desnutrido escualido')
+        elif IMC<=24.9:
+            return str('saludable')
+        elif IMC<=29.9:
+            return str('gordo')
+        elif IMC<=34.9:
+            return str('mas gordo')
+        elif IMC<=39.9:
+            return str('te mamaste')
+        else:
+            return str('ya valiste')
+def main():
+    estudiate1=Personas()
+    estudiate1.nombre='Pedro Caveres'
+    estudiate1.altura=188
+    estudiate1.peso=97
+    estudiate2=Personas()
+    estudiate2.nombre='Maria Perez'
+    estudiate2.altura=160
+    estudiate2.peso=47
+    estudiate3=Personas()
+    estudiate3.nombre='Julian Dominguez'
+    estudiate3.altura=158
+    estudiate3.peso=58
+    estudiate4=Personas()
+    estudiate4.nombre='Jessica Fuentes'
+    estudiate4.altura=170
+    estudiate4.peso=73
+    print(f'estudiante: {estudiate1.nombre} resultado: {estudiate1.indice()}')
+    print(f'estudiante: {estudiate2.nombre} resultado: {estudiate2.indice()}')
+    print(f'estudiante: {estudiate3.nombre} resultado: {estudiate3.indice()}')
+    print(f'estudiante: {estudiate4.nombre} resultado: {estudiate4.indice()}')
+
+if __name__=='__main__':
+    main()
