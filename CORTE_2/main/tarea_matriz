@@ -1,0 +1,45 @@
+import numpy as np
+
+matriz = np.random.randint(0,100, (5, 10))
+
+print(matriz)
+
+
+num_M = matriz.max()
+p_maximo = np.where(matriz == num_M)
+
+num_m = matriz.min()
+p_minimo = np.where(matriz == num_m)
+
+print(f'el número máximo es {num_M}')
+print(f'se encuentra en la posición {p_maximo}')
+print(f'el número máximo es {num_m}')
+print(f'se encuentra en la posición {p_minimo}')
+
+
+matriz_ordenada = -np.sort(-matriz, axis=None).reshape(matriz.shape)
+print("Matriz ordenada")
+print(matriz_ordenada)
+
+###################################################################
+###################################################################
+n = int(input('ingrese el multiplicador final'))
+p = int(input('ingrese su numero '))
+def K(n, p):
+    if n == 1:
+        return p
+    else:
+        return n * p + K(n - 1, p)
+print(K(n,p))
+
+##################################################################
+##################################################################
+cont = int(input('ingrese la cantidad de veces que desea realizar la serie fibonacci'))
+def s_fibonacci(cont):
+    if cont == 0:
+        return 0
+    elif cont == 1:
+        return 1
+    else:
+        return s_fibonacci(cont-1) + s_fibonacci(cont-2)
+print(s_fibonacci(cont))
