@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+id=int(input('ingrese el id del pais que desea averiguar'))
+df = pd.read_csv('organization_data.csv')
+
+def informacion_pais(id_pais):
+    empresas_pais = df[df['id_pais'] == id_pais]
+    empresa_mayor_empleados = empresas_pais.loc[empresas_pais['num_empleados'].idxmax()]
+    empresa_menor_empleados = empresas_pais.loc[empresas_pais['num_empleados'].idxmin()]
+    promedio_empleados = np.mean(empresas_pais['num_empleados'])
+    promedio_empleados=round(2)
+    nombre_pais = empresas_pais.iloc[0]['nombre_pais']
+    num_empresas = len(empresas_pais)
+
+
+    print(f'Informacion de {nombre_pais}:')
+    print(f"Empresa con mayor nomero de empleados: {empresa_mayor_empleados['nombre_empresa']}")
+    print(f"Direccion: {empresa_mayor_empleados['direccion']}")
+    print(f"Numero de empleados: {empresa_mayor_empleados['num_empleados']}")
+    print(f"Empresa con menor nomero de empleados: {empresa_menor_empleados['nombre_empresa']}")
+    print(f"Direccion: {empresa_menor_empleados['direccion']}")
+    print(f"Numero de empleados: {empresa_menor_empleados['num_empleados']}")
+    print(f'Valor promedio del nomero de empleados: {promedio_empleados:.2f}')
+    print(f'Numero de empresas en la lista: {num_empresas}')
+
+
+informacion_pais(id)
