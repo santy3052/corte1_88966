@@ -1,0 +1,56 @@
+#indice masa corcoral
+class Personas():
+    def __init__(self):
+        self.__nombre=None
+        self.__altura=None
+        self.__peso=None
+
+# --------- getters -----------
+    def getNombre(self):
+        return self.__nombre
+
+    def getAltura(self):
+        return self.__altura
+
+    def getPeso(self):
+        return self.__peso
+
+# --------- setters -----------
+    def setNombre(self,nombre:str):
+        self.__nombre=nombre
+
+    def setAltura(self,altura:int):
+        self.__altura=altura
+
+    def setPeso(self,peso:int):
+        self.__peso=peso
+
+# --------- metodo IMC -----------
+
+    def __indice(self):
+        IMC=self.__peso/((self.__altura/100)**2)
+        if IMC<=18.5:
+            return str('pr debajo de lo normal')
+        elif IMC<=24.9:
+            return str('saludable')
+        elif IMC<=29.9:
+            return str('sobrepeso')
+        elif IMC<=34.9:
+            return str('obesidad I')
+        elif IMC<=39.9:
+            return str('obesidad II')
+        else:
+            return str('obesidad III')
+    def getIMC(self):
+        return self.__indice()
+def main():
+    estudiante=Personas()
+    estudiante.setNombre('Santiago')
+    estudiante.setAltura(175)
+    estudiante.setPeso(63)
+    print(f'{estudiante.getNombre()}')
+    print(f'{estudiante.getAltura()}')
+    print(f'{estudiante.getPeso()}')
+    print(f'{estudiante.getIMC()}')
+if __name__=='__main__':
+    main()
