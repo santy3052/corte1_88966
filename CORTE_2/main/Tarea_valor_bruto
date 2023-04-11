@@ -1,0 +1,28 @@
+productos = {}
+with open("Alimentos.txt", "r") as archivo:
+    for linea in archivo:
+        partes = linea.strip().split(",")
+        if len(partes) == 2:
+            producto, iva = partes
+            try:
+                productos[producto] = float(iva)
+            except ValueError:
+                print("Valor de IVA inválido en la línea:", linea.strip())
+while True:
+    producto = input("Ingrese el nombre del producto (o escriba 'salir' para salir): ")
+    if producto == "salir":
+        break
+    iva = productos.get(producto)
+    if iva is None:
+        print("Producto no encontrado.")
+        continue
+    valor_neto = input("Ingrese el valor neto del producto: ")
+    if not valor_neto.isdigit() and not (valor_neto.count(".") == 1 and all(c.isdigit() for c in valor_neto.replace(".", ""))):
+        print("Valor neto inválido.")
+        continue
+    valor_neto = float(valor_neto)
+    valor_base = valor_neto / (1 + iva)
+    valor_iva = valor_base * iva
+    print("Valor base: {:.2f}".format(valor_base))
+    print("Valor del IVA ({:.2f}%): {:.2f}".format(iva * 100, valor_iva))
+    
