@@ -1,0 +1,56 @@
+class Ciudadano:
+    def __init__(self,nombre,edad:int):
+        self.__nombre='Jose'
+        self.__edad=50
+    def estado(self):
+        print('trabajando')
+
+class IngenieroMecatronico(Ciudadano):
+    def __init__(self):
+        super().__init__(self)
+        self.__rama1=ensamblaje
+        self.rama2 = metalurgia
+    def setRama1(self,rama1:str):
+        self.__rama1=rama1
+    def getRama1(self):
+        return self.__rama1
+class Medico(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__rama1 = pediatria
+        self.rama2 = cirugia
+    def setRama1(self,rama1):
+        self.__rama1=rama1
+    def getRama1(self):
+        return self.__rama1
+    def estado(self):
+        print('desempleado')
+class Deportista(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.rama1 = futbol
+        self.__rama2 = baloncesto
+    def setRama2(self,rama2):
+        self.__rama2=rama2
+    def getRama2(self):
+        return self.__rama2
+
+def main():
+    p1=IngenieroMecatronico
+    print(p1.getRama1())
+    p1.setRama1('investigacion')
+    print(p1.getRama1())
+    p2=Medico
+    print(p2.getRama1())
+    p2.setRama1('anatomia')
+    print(p2.getRama1())
+    print(estado(self))
+    p3=Deportista
+    print(p3.getRama2())
+    p3.setRama2('voleybol')
+    print(p3.getRama2())
+
+
+if __name__=='__main__':
+    main()
+
