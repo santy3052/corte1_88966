@@ -1,0 +1,109 @@
+class Ciudadano:
+    def __init__(self):
+        self.__nombre = None
+        self.__idioma = None
+    # -------------- setters --------------   # El que modifica datos
+    def setNombre(self,nombre:str):
+         self.__nombre = nombre
+    def setIdioma(self,idioma:str):
+         self.__idioma = idioma
+
+    # -------------- Getters --------------   # El que toma datos
+    def getNombre(self):
+        return self.__nombre
+    def getIdioma(self):
+        return self.__idioma
+
+    # -------------- sobrecarga --------------
+    def saludo (self):
+        return 'quio de beau'
+
+class Colombia(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__cc = None
+
+    # -------------- setters --------------
+    def setCC(self,cc:int):
+        self.__cc=cc
+
+    # -------------- Getters --------------
+    def getCC(self):
+        return self.__cc
+
+    # -------------- sobrecarga --------------
+    def saludo (self):
+        return 'hola'
+class Inglaterra(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__id = None
+
+    # -------------- setters --------------
+    def setId(self,id:int):
+        self.__id=id
+
+    # -------------- Getters --------------
+    def getId(self):
+        return self.__id
+
+    # -------------- sobrecarga --------------
+    def saludo (self):
+        return 'hello my friend'
+
+class China(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__shengfenzheng = None
+    # -------------- setters --------------
+    def setShengfenzheng(self,shengfenzheng:int):
+        self.__shengfenzheng=shengfenzheng
+    # -------------- Getters --------------
+    def getShengfenzheng(self):
+        return self.__shengfenzheng
+    # -------------- sobrecarga --------------
+    def saludo (self):
+        return 'NiGanMaYa'
+
+def darSaludo(obj):
+    print(obj.saludo())
+    return obj.saludo()
+def main():
+    colombiano= Colombia()
+    colombiano.setNombre('Kevin')
+    colombiano.setIdioma('Español')
+    colombiano.setCC(12378945)
+    ingles=Inglaterra()
+    ingles.setNombre('Jack')
+    ingles.setIdioma('ingles')
+    ingles.setId(31548793)
+    chino=China()
+    chino.setNombre('Liu Chan')
+    chino.setIdioma('mandarin')
+    chino.setShengfenzheng(1234567865123)
+    ciudadano1=Ciudadano()
+    ciudadano1.setNombre('carla')
+    ciudadano1.setIdioma('Frances')
+    darSaludo(colombiano)
+    darSaludo(ingles)
+    darSaludo(chino)
+    darSaludo(ciudadano1)
+
+    # -------------- aplicantes --------------
+    print(f'aplicante: {colombiano.getNombre()}\n'+\
+          f'idioma: {colombiano.getIdioma()}\n'+\
+          f'cedula: {colombiano.getCC()}\n'+\
+          f'{darSaludo(colombiano)}\n')
+    print(f'aplicante: {ingles.getNombre()}\n'+\
+          f'idioma: {ingles.getIdioma()}\n'+\
+          f'cedula: {ingles.getId()}\n'+\
+          f'{darSaludo(ingles)}\n')
+    print(f'aplicante: {chino.getNombre()}\n'+\
+          f'idioma: {chino.getIdioma()}\n'+\
+          f'cedula: {chino.getShengfenzheng()}\n'+\
+          f'{darSaludo(chino)}\n')
+    print(f'aplicante: {ciudadano1.getNombre()}\n'+\
+          f'idioma: {ciudadano1.getIdioma()}\n'+\
+          f'{darSaludo(ciudadano1)}\n')
+if __name__=="__main__":
+    main()
