@@ -1,56 +1,163 @@
 class Ciudadano:
-    def __init__(self,nombre,edad:int):
-        self.__nombre='Jose'
-        self.__edad=50
-    def estado(self):
-        print('trabajando')
+    def __init__(self):
+        self.__nombre = None
+        self.__estudio = None
+    # -------------- setters --------------
+    def setNombre(self, nombre: str):
+        self.__nombre = nombre
+    def setEstudio(self,estudio:str):
+        self.__estudio = estudio
+
+    # -------------- Getters --------------
+    def getNombre(self):
+        return self.__nombre
+    def getEstudio(self):
+        return self.__estudio
+
+    # -------------- sobrecarga --------------
+    def estado (self):
+        return 'empleado'
 
 class IngenieroMecatronico(Ciudadano):
     def __init__(self):
-        super().__init__(self)
-        self.__rama1=ensamblaje
-        self.rama2 = metalurgia
-    def setRama1(self,rama1:str):
-        self.__rama1=rama1
+        super().__init__()
+        self.__estudio = None
+        self.__rama1 = 'ensamblaje'
+        self.__rama2 = 'metalurgia'
+
+    # -------------- setters --------------
+    def setEstudio(self,estudio:str):
+        self.__estudio=estudio
+
+    def setRama1(self, rama1: str):
+        self.__rama1 = rama1
+
+    def setRama2(self, rama2: str):
+        self.__rama2 = rama2
+
+    # -------------- Getters --------------
+    def getEstudio(self):
+        return self.__estudio
+
     def getRama1(self):
         return self.__rama1
-class Medico(Ciudadano):
-    def __init__(self):
-        super().__init__()
-        self.__rama1 = pediatria
-        self.rama2 = cirugia
-    def setRama1(self,rama1):
-        self.__rama1=rama1
-    def getRama1(self):
-        return self.__rama1
-    def estado(self):
-        print('desempleado')
-class Deportista(Ciudadano):
-    def __init__(self):
-        super().__init__()
-        self.rama1 = futbol
-        self.__rama2 = baloncesto
-    def setRama2(self,rama2):
-        self.__rama2=rama2
+
     def getRama2(self):
         return self.__rama2
 
+
+    def estado (self):
+        return 'empleado'
+
+class Medico(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__estudio = None
+        self.__rama1 = 'pediatria'
+        self.__rama2 = 'cirugia'
+
+    # -------------- setters --------------
+    def setEstudio(self,estudio:str):
+        self.__estudio=estudio
+
+    def setRama1(self, rama1: str):
+        self.__rama1 = rama1
+
+    def setRama2(self, rama2: str):
+        self.__rama2 = rama2
+
+    # -------------- Getters --------------
+    def getEstudio(self):
+        return self.__estudio
+
+    def getRama1(self):
+        return self.__rama1
+
+    def getRama2(self):
+        return self.__rama2
+
+    # -------------- sobrecarga --------------
+    def estado(self):
+        return 'desempleado'
+
+class Deportista(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__estudio = None
+        self.__rama1 = 'futbol'
+        self.__rama2 = 'voleibol'
+    # -------------- setters --------------
+    def setEstudio(self,estudio:str):
+        self.__estudio=estudio
+
+    def setRama1(self, rama1: str):
+        self.__rama1 = rama1
+
+    def setRama2(self, rama2: str):
+        self.__rama2 = rama2
+
+
+    # -------------- Getters --------------
+    def getEstudio(self):
+        return self.__estudio
+
+    def getRama1(self):
+        return self.__rama1
+
+    def getRama2(self):
+        return self.__rama2
+
+
+    def estado (self):
+        return 'empleado'
+
+def darEstado(obj):
+    print(obj.estado())
+    return obj.estado()
+
 def main():
-    p1=IngenieroMecatronico
-    print(p1.getRama1())
-    p1.setRama1('investigacion')
-    print(p1.getRama1())
-    p2=Medico
-    print(p2.getRama1())
-    p2.setRama1('anatomia')
-    print(p2.getRama1())
-    print(estado(self))
-    p3=Deportista
-    print(p3.getRama2())
-    p3.setRama2('voleybol')
-    print(p3.getRama2())
+    p1 = IngenieroMecatronico()
+    p1.setNombre('Santiago')
+    p1.setEstudio('pregrado')
+    print(f'persona: {p1.getNombre()}\n'+\
+          f'estudios: {p1.getEstudio()}\n'+\
+          f'rama: {p1.getRama1()}\n'+\
+          f'estado: {darEstado(p1)}\n')
+    p2 = IngenieroMecatronico()
+    p2.setNombre('Julian')
+    p2.setEstudio('posgrado')
+    print(f'persona: {p2.getNombre()}\n' + \
+          f'estudios: {p2.getEstudio()}\n' + \
+          f'rama: {p2.getRama2()}\n' + \
+          f'estado: {darEstado(p2)}\n')
+    p3 = Medico()
+    p3.setNombre('Luisa')
+    p3.setEstudio('pregrado')
+    print(f'persona: {p3.getNombre()}\n' + \
+          f'estudios: {p3.getEstudio()}\n' + \
+          f'rama: {p3.getRama1()}\n' + \
+          f'estado: {darEstado(p3)}\n')
+    p4 = Medico()
+    p4.setNombre('Roberto')
+    p4.setEstudio('pregrado')
+    print(f'persona: {p4.getNombre()}\n' + \
+          f'estudios: {p4.getEstudio()}\n' + \
+          f'rama: {p4.getRama2()}\n' + \
+          f'estado: {darEstado(p4)}\n')
+    p5 = Deportista()
+    p5.setNombre('Daniela')
+    p5.setEstudio('bachiller')
+    print(f'persona: {p5.getNombre()}\n' + \
+          f'estudios: {p5.getEstudio()}\n' + \
+          f'rama: {p5.getRama1()}\n' + \
+          f'estado: {darEstado(p5)}\n')
+    p6 = Deportista()
+    p6.setNombre('Luis')
+    p6.setEstudio('bachiller')
+    print(f'persona: {p6.getNombre()}\n' + \
+          f'estudios: {p6.getEstudio()}\n' + \
+          f'rama: {p6.getRama2()}\n' + \
+          f'estado: {darEstado(p6)}\n')
 
-
-if __name__=='__main__':
+if __name__=="__main__":
     main()
-
