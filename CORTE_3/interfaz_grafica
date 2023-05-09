@@ -10,12 +10,19 @@ class principal(PyQT.QMainWindow):
     def initGui(self):
         uic.loadUi('p1xdxd.ui',self)
         self.show()
-        self.pushButton.clicked.connect(lambda: self.calcular())
+        self.calcular.clicked.connect(lambda: self.Calcular())
 
-    def calcular(self):
-        texto1=self.num1.text()
-        self.resultado.setText(texto1)
-
+    def Calcular(self):
+        texto1=int(self.num1.text())
+        texto2=int(self.num2.text())
+        if self.sumar.isChecked()==True:
+            self.resultado.setText(str(texto1+texto2))
+        elif self.restar.isChecked()==True:
+            self.resultado.setText(str(texto1-texto2))
+        elif self.multiplicar.isChecked()==True:
+            self.resultado.setText(str(texto1*texto2))
+        elif self.dividir.isChecked()==True:
+            self.resultado.setText(str(texto1/texto2))
 def main():
     app = PyQT.QApplication([])
     window = principal()
