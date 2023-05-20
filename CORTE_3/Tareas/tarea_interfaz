@@ -1,0 +1,33 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import Qt
+from PyQt5.uic import loadUi
+
+class Ventas(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        loadUi("vista_ventas.ui", self)
+        self.registrar_button.clicked.connect(self.registrar_venta)
+
+    def registrar_venta(self):
+        # Obtener los datos de la venta desde los widgets de entrada
+        establecimiento = self.establecimiento_lineEdit.text()
+        d_establecimiento = self.d_establecimiento_lineEdit.text()
+        producto = self.producto_lineEdit.text()
+        cod_producto = self.codigo_lineEdit.text()
+        cantidad = self.cantidad_lineEdit.text()
+        precio_bruto = self.precio_lineEdit.text()
+        cliente = self.cliente_lineEdit.text()
+        precio_bruto = float(precio_bruto)
+        iva = precio_bruto * 0.19
+        precio_total = precio_bruto + iva
+        factura = f"Establecimiento: {establecimiento}\nProducto: {producto}\nCódigo Producto: {cod_producto}" \
+                  f"\nCantidad: {cantidad}\nPrecio Bruto: {precio_bruto}\nIVA: {iva}\nPrecio Total: {precio_total}" \
+                  f"\nCliente: {cliente}\n"
+        print(factura)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ventana = Ventas()
+    ventana.show()
+    sys.exit(app.exec_())
