@@ -7,7 +7,7 @@ class Ventas(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi("vista_ventas.ui", self)
-        self.registrar_button.clicked.connect(self.registrar_venta)
+        self.registrar.clicked.connect(self.registrar_venta)
 
     def registrar_venta(self):
         # Obtener los datos de la venta desde los widgets de entrada
