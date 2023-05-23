@@ -1,33 +1,97 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtCore import Qt
-from PyQt5.uic import loadUi
-
-class Ventas(QMainWindow):
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QTextEdit
+from PyQt5.QtCore import QDate
+from random import randrange
+class VentasApp(QWidget):
     def __init__(self):
         super().__init__()
-        loadUi("vista_ventas.ui", self)
-        self.registrar.clicked.connect(self.registrar_venta)
 
-    def registrar_venta(self):
-        # Obtener los datos de la venta desde los widgets de entrada
-        establecimiento = self.establecimiento_lineEdit.text()
-        d_establecimiento = self.d_establecimiento_lineEdit.text()
-        producto = self.producto_lineEdit.text()
-        cod_producto = self.codigo_lineEdit.text()
-        cantidad = self.cantidad_lineEdit.text()
-        precio_bruto = self.precio_lineEdit.text()
-        cliente = self.cliente_lineEdit.text()
-        precio_bruto = float(precio_bruto)
+        self.setWindowTitle("Registro de Ventas")
+        self.setGeometry(600, 600, 700, 600)
+
+        # Etiqueta para mostrar la fecha
+        self.lbl_fecha = QLabel(self)
+        self.lbl_fecha.move(20, 20)
+        self.lbl_fecha.setText("Fecha: " + QDate.currentDate().toString())
+
+        # Etiqueta y campo de texto para el nombre del establecimiento
+        self.lbl_establecimiento = QLabel("Nombre del Establecimiento:", self)
+        self.lbl_establecimiento.move(20, 60)
+        self.txt_establecimiento = QLineEdit(self)
+        self.txt_establecimiento.move(200, 60)
+
+        # Etiqueta y campo de texto para la dirección del establecimiento
+        self.lbl_direccion = QLabel("Dirección del Establecimiento:", self)
+        self.lbl_direccion.move(20, 100)
+        self.txt_direccion = QLineEdit(self)
+        self.txt_direccion.move(200, 100)
+
+        # Etiqueta y campo de texto para el nombre del producto
+        self.lbl_producto = QLabel("Nombre del Producto:", self)
+        self.lbl_producto.move(20, 140)
+        self.txt_producto = QLineEdit(self)
+        self.txt_producto.move(200, 140)
+
+        # Etiqueta y campo de texto para el código del producto
+        self.lbl_codigo_producto = QLabel("Código del Producto:", self)
+        self.lbl_codigo_producto.move(20, 180)
+        self.txt_codigo_producto = QLineEdit(self)
+        self.txt_codigo_producto.move(200, 180)
+
+        # Etiqueta y campo de texto para la cantidad
+        self.lbl_cantidad = QLabel("Cantidad:", self)
+        self.lbl_cantidad.move(20, 220)
+        self.txt_cantidad = QLineEdit(self)
+        self.txt_cantidad.move(200, 220)
+
+        # Etiqueta y campo de texto para el precio bruto
+        self.lbl_precio_bruto = QLabel("Precio Bruto:", self)
+        self.lbl_precio_bruto.move(20, 260)
+        self.txt_precio_bruto = QLineEdit(self)
+        self.txt_precio_bruto.move(200, 260)
+
+        # Botón para realizar la venta
+        self.btn_venta = QPushButton("Realizar Venta", self)
+        self.btn_venta.move(150, 300)
+        self.btn_venta.clicked.connect(self.realizar_venta)
+
+        # Cuadro de texto para mostrar la factura
+        self.txt_factura = QTextEdit(self)
+        self.txt_factura.setGeometry(20, 340, 360, 150)
+
+    def realizar_venta(self):
+        fecha = QDate.currentDate().toString()
+        nombre_establecimiento = self.txt_establecimiento.text()
+        direccion_establecimiento = self.txt_direccion.text()
+        nombre_producto = self.txt_producto.text()
+        codigo_producto = self.txt_codigo_producto.text()
+        cantidad = int(self.txt_cantidad.text())
+        precio_bruto = float(self.txt_precio_bruto.text())
+
+        # Cálculos
         iva = precio_bruto * 0.19
         precio_total = precio_bruto + iva
-        factura = f"Establecimiento: {establecimiento}\nProducto: {producto}\nCódigo Producto: {cod_producto}" \
-                  f"\nCantidad: {cantidad}\nPrecio Bruto: {precio_bruto}\nIVA: {iva}\nPrecio Total: {precio_total}" \
-                  f"\nCliente: {cliente}\n"
+
+        # Generación de la factura
+        n=randrange(1000,1000000)
+        factura = f"NUM. factura: #{n}\n"
+        factura += f"Fecha: {fecha}\n"
+        factura += f"Nombre del Establecimiento: {nombre_establecimiento}\n"
+        factura += f"Dirección del Establecimiento: {direccion_establecimiento}\n"
+        factura += "Detalles de la venta:\n"
+        factura += f"Nombre del Producto: {nombre_producto}\n"
+        factura += f"Código del Producto: {codigo_producto}\n"
+        factura += f"Cantidad: {cantidad}\n"
+        factura += f"Precio Bruto: ${precio_bruto:.2f}\n"
+        factura += f"IVA: ${iva:.2f}\n"
+        factura += f"Precio Total: ${precio_total:.2f}\n"
+
         print(factura)
+        self.txt_factura.setPlainText(factura)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ventana = Ventas()
-    ventana.show()
+    ventas_app = VentasApp()
+    ventas_app.show()
     sys.exit(app.exec_())
