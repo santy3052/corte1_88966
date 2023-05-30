@@ -1,3 +1,4 @@
-numero_binario = int(texto1)
-decimal = (numero_binario, 2)
-print("El número decimal es:", decimal)
+texto1=23123
+numero_decimal = texto1
+hexadecimal = hex(numero_decimal)
+print(hexadecimal)
