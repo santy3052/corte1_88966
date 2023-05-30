@@ -1,9 +1,3 @@
-def hexadecimal_a_decimal(hexadecimal):
-    decimal = int(hexadecimal, 16)
-    return decimal
-
-
-numero_hexadecimal = input("Ingresa un número hexadecimal: ")
-decimal = hexadecimal_a_decimal(numero_hexadecimal)
+numero_binario = int(texto1)
+decimal = (numero_binario, 2)
 print("El número decimal es:", decimal)
-
