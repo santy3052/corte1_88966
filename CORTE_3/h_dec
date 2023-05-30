@@ -1,4 +1,3 @@
 texto1=23123
-numero_decimal = texto1
-hexadecimal = hex(numero_decimal)
+hexadecimal = hex(texto1)[2:].upper()
 print(hexadecimal)
